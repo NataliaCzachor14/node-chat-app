@@ -6,6 +6,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
+                sh 'npm install'
                 sh 'npm run test'
             }
         }
@@ -19,6 +20,10 @@ pipeline {
     	
     	success {
     	     echo 'Success'
+    	     emailext attachLog: true,
+                body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}",
+                to: 'nataliaczachor14@gmail.com',
+                subject: "Successful build and test!"
     	}
     	
         failure {

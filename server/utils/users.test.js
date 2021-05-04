@@ -44,7 +44,7 @@ describe('Users', () => {
 		var user = users.removeUser(userId);
 
 		expect(user.id).toBe(userId);
-		expect(users.users.length).toBe(2);
+		expect(users.users.length).toBe(5);
 	});
 
 	it('should NOT remove a user', () => {
@@ -59,7 +59,7 @@ describe('Users', () => {
 	it('should return names for Lakers Fans', () => {
 		var userList = users.getUserList('Lakers Fans');
 
-		expect(userList).toEqual(['Binh', 'Steph']);
+		expect(userList).toEqual(['A', 'Steph']);
 	});
 
 	it('should return names for Fad Diet', () => {

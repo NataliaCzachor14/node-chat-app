@@ -23,7 +23,7 @@ pipeline {
     	     emailext attachLog: true,
                 body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}",
                 to: 'nataliaczachor14@gmail.com',
-                subject: "Successful build and test!"
+                subject: "Success Jenkins build"
     	}
     	
         failure {
@@ -31,7 +31,7 @@ pipeline {
             emailext attachLog: true,
                 body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}",
                 to: 'nataliaczachor14@gmail.com',
-                subject: "Build or test failed!"
+                subject: "Failure Jenkins build"
         }
     
     }

@@ -6,7 +6,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'npm istall'
+                sh 'npm install'
             }
             post{
     		success {
